@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finish connecting TikTok · Crosspost</title>
+<style>body{margin:0;background:#0d0d10;color:#ececf1;font:16px/1.6 system-ui,Segoe UI,Roboto,sans-serif}main{max-width:680px;margin:0 auto;padding:64px 24px}code{display:block;background:#16161b;border:1px solid #2a2a33;border-radius:10px;padding:12px;word-break:break-all;font-size:13px}button{margin-top:12px;background:#c6ff3d;color:#111;border:0;border-radius:10px;padding:10px 18px;font-weight:700;cursor:pointer}p{color:#b5b5c0}</style></head>
+<body><main>
+<h1>Almost done</h1>
+<p id="msg">Copy this whole address and paste it into Crosspost's "Finish connecting TikTok" box.</p>
+<code id="url"></code>
+<button id="copy">Copy address</button>
+<script>
+const u = location.href; document.getElementById('url').textContent = u;
+if (!/[?&]code=/.test(u)) document.getElementById('msg').textContent = 'This page is where TikTok sends you after you log in from Crosspost. There is no login code in this address yet.';
+document.getElementById('copy').onclick = () => navigator.clipboard.writeText(u).then(() => document.getElementById('copy').textContent = 'Copied ✓');
+</script>
+</main></body></html>
